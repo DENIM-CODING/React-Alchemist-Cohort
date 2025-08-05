@@ -5,15 +5,16 @@ const App = () =>{
     return React.createElement("div",{class:"test"},
         [
             React.createElement("h1",{},"Chai"),
-            React.createElement(Chai)
+            React.createElement(Chai, {name:"Green Tea" , cost: "1000"}),
+            React.createElement(Chai, {name:"Black Tea" , cost: "600"})
         ]
     )
 }
-
-const Chai = () => {
+//props : properties
+const Chai = (props) => {
     return React.createElement("div",{},[
-        React.createElement("h1",{},"Masala Chai"),
-        React.createElement("h1",{},"Ginger Chai"),
+        React.createElement("h4",{},props.name),
+        React.createElement("h4",{},props.cost),
 
     ])
 }
@@ -22,4 +23,3 @@ const container = document.getElementById("root")
 const root = ReactDOM.createRoot(container);
 root.render(React.createElement(App))
 
-//chapter2 over
